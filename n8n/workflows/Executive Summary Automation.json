@@ -1,0 +1,246 @@
+{
+  "name": "Real Estate KPI Pipeline",
+  "nodes": [
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "CREATE OR REPLACE VIEW clean.kpi_summary AS\nSELECT\n    (SELECT SUM(sale_amount) FROM clean.sales) AS total_revenue,\n    (SELECT COUNT(*) FROM clean.sales) AS total_sales,\n    (SELECT ROUND(AVG(rating),2) FROM clean.customer_feedback) AS avg_rating,\n    (\n        SELECT p.region\n        FROM clean.sales s\n        JOIN clean.properties p ON s.property_id = p.property_id\n        GROUP BY p.region\n        ORDER BY SUM(s.sale_amount) DESC\n        LIMIT 1\n    ) AS top_region,\n    (\n        SELECT a.agent_name\n        FROM clean.sales s\n        JOIN clean.agents a ON s.agent_id = a.agent_id\n        GROUP BY a.agent_name\n        ORDER BY COUNT(*) DESC\n        LIMIT 1\n    ) AS top_agent,\n    (\n        SELECT ROUND(\n            100.0 * SUM(CASE WHEN lead_status = 'Converted' THEN 1 ELSE 0 END)\n            / COUNT(*),2\n        )\n        FROM clean.leads\n    ) AS conversion_rate,\n    (\n        SELECT m.campaign_name\n        FROM clean.leads l\n        JOIN clean.marketing_campaigns m\n        ON l.campaign_id = m.campaign_id\n        GROUP BY m.campaign_name\n        ORDER BY COUNT(*) DESC\n        LIMIT 1\n    ) AS top_campaign;\n\n\nSELECT * FROM clean.kpi_summary;",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [
+        192,
+        -176
+      ],
+      "id": "2eb63a92-a8e2-4f79-b864-79bc16e67cd0",
+      "name": "Execute a SQL query",
+      "credentials": {
+        "postgres": {
+          "id": "cMN7opGLQcdwkaPq",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=You are a Senior Real Estate Business Analyst.\n\nKPI Data:\n\nRevenue: {{$json.total_revenue}}\n\nSales: {{$json.total_sales}}\n\nAverage Rating: {{$json.avg_rating}}\n\nTop Region: {{$json.top_region}}\n\nTop Agent: {{$json.top_agent}}\n\nConversion Rate: {{$json.conversion_rate}}\n\nTop Campaign: {{$json.top_campaign}}\n\nProvide:\n\nExecutive Summary\n\nKey Findings\n\nRecommendations\n\nUse only the KPI data above.\nDo not ask for additional data.\nDo not return JSON.\nKeep the response concise and professional.",
+        "batching": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.9,
+      "position": [
+        400,
+        -128
+      ],
+      "id": "e0475e97-c68e-4f8a-acba-b70b72a40b8b",
+      "name": "Basic LLM Chain"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1.1,
+      "position": [
+        496,
+        80
+      ],
+      "id": "e6ec6f95-452b-4e4b-a343-dc7da3f5af67",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "QZr6BEiQS6yxDxNI",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "minutes",
+              "minutesInterval": 1
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        0,
+        0
+      ],
+      "id": "5c178fc7-8ef5-493d-8403-300c8dadbd73",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "sendTo": "mohdfayd325@gmail.com",
+        "subject": "Weekly Real Estate Report",
+        "message": "={{$node[\"Basic LLM Chain\"].json[\"text\"]}}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        960,
+        16
+      ],
+      "id": "39287b41-85b1-4f15-9f63-f2006c8cda7d",
+      "name": "Send a message",
+      "webhookId": "10b2f794-a704-4014-9cb1-2befddfc51b7",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "1hz6Ak6whCsuN9Yb",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "schema": {
+          "__rl": true,
+          "value": "clean",
+          "mode": "list",
+          "cachedResultName": "clean"
+        },
+        "table": {
+          "__rl": true,
+          "value": "ai_reports",
+          "mode": "list",
+          "cachedResultName": "ai_reports"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "report_text": "={{$json.text}}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "report_id",
+              "displayName": "report_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "report_date",
+              "displayName": "report_date",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "dateTime",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "report_text",
+              "displayName": "report_text",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [
+        768,
+        -144
+      ],
+      "id": "a4829f29-cb9f-4afd-a819-c1aa05330e49",
+      "name": "Insert rows in a table",
+      "credentials": {
+        "postgres": {
+          "id": "cMN7opGLQcdwkaPq",
+          "name": "Postgres account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Execute a SQL query": {
+      "main": [
+        [
+          {
+            "node": "Basic LLM Chain",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Basic LLM Chain",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Execute a SQL query",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Basic LLM Chain": {
+      "main": [
+        [
+          {
+            "node": "Insert rows in a table",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Insert rows in a table": {
+      "main": [
+        [
+          {
+            "node": "Send a message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "65580c5b-525b-43e0-8a3a-5b30a131be69",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "227d6ea6a55283c07ecd134897943955f5521bbfcd72a69a55c4cfc1b1ee935b"
+  },
+  "nodeGroups": [],
+  "id": "dM0KG7sjUXyZJXg9",
+  "tags": []
+}

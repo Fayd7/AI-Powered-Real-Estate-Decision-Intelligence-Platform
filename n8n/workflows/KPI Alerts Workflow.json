@@ -1,0 +1,176 @@
+{
+  "name": "KPI Alerts Workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "minutes"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        -944,
+        -192
+      ],
+      "id": "1c79cc9f-2f76-42a3-a533-ea82c009f5db",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT conversion_rate, total_revenue,\n  total_sales, avg_rating, top_region from clean.kpi_summary;",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [
+        -736,
+        -240
+      ],
+      "id": "9659c32f-df90-4c97-b242-c6da5b5cdb7a",
+      "name": "Execute a SQL query",
+      "credentials": {
+        "postgres": {
+          "id": "cMN7opGLQcdwkaPq",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "4f260295-7013-419b-a1a2-97b86bbaa78a",
+              "leftValue": "={{ $json.alert_count }}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "gt"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        -368,
+        -240
+      ],
+      "id": "2431126b-d4ae-42c2-91e6-d5fc87f5f9ab",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "sendTo": "mohdfayd325@gmail.com",
+        "subject": "KPI  Alert!!!",
+        "message": "={{ $json.alerts }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        -176,
+        -96
+      ],
+      "id": "d4950584-1d48-4700-a90a-7c3be9e77e1e",
+      "name": "Send a message",
+      "webhookId": "bf43536e-f5de-4462-9290-73035e5d78f2",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "1hz6Ak6whCsuN9Yb",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const alerts = [];\n\nif (Number($json.avg_rating) < 4)\n  alerts.push(`❌ Average Rating: ${$json.avg_rating} (Target: 4)`);\n\nif (Number($json.conversion_rate) < 20)\n  alerts.push(`❌ Conversion Rate: ${$json.conversion_rate}% (Target: 20%)`);\n\nif (Number($json.total_sales) < 150)\n  alerts.push(`❌ Total Sales: ${$json.total_sales} (Target: 150)`);\n\nif (Number($json.total_revenue) < 1000000)\n  alerts.push(`❌ Revenue: ${$json.total_revenue} (Target: 1000000)`);\n\nreturn [{\n  json: {\n    alerts: alerts.join(\"\\n\"),\n    alert_count: alerts.length\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -544,
+        -128
+      ],
+      "id": "2800289c-b513-4604-acbe-0544cf61ce78",
+      "name": "Code in JavaScript"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Execute a SQL query",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Execute a SQL query": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Send a message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "2e8d68af-e6e8-47a4-8014-e47e2af06f1a",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "227d6ea6a55283c07ecd134897943955f5521bbfcd72a69a55c4cfc1b1ee935b"
+  },
+  "nodeGroups": [],
+  "id": "BOmFIErsXwBZC9Vb",
+  "tags": []
+}

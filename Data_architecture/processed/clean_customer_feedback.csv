@@ -1,0 +1,202 @@
+feedback_id,agent_id,rating,review_text,review_date
+F0001,A007,2.0,Property listing information was outdated,2026-01-23
+F0002,A006,5.0,Very professional throughout the transaction,2026-05-19
+F0003,A005,1.0,Agent missed scheduled viewing,2026-03-23
+F0004,A001,1.0,Agent missed scheduled viewing,2026-02-03
+F0005,A008,5.0,Excellent property viewing experience,2026-02-07
+F0006,A004,5.0,Very professional throughout the transaction,2026-04-10
+F0007,A010,1.0,Agent missed scheduled viewing,2026-02-09
+F0008,A001,2.0,Property listing information was outdated,2026-03-31
+F0009,A007,2.0,Service charge details were unclear,2026-01-08
+F0010,A006,2.0,Service charge details were unclear,2026-06-01
+F0011,A005,2.0,Follow-up took too long,2026-03-10
+F0012,A004,1.0,Agent missed scheduled viewing,2026-04-08
+F0013,A010,2.0,Follow-up took too long,2026-03-13
+F0014,A002,5.0,Very professional throughout the transaction,2026-06-07
+F0015,A005,1.0,Agent missed scheduled viewing,2026-03-17
+F0016,A003,2.0,Property listing information was outdated,2026-04-10
+F0017,A008,2.0,Property listing information was outdated,2026-03-01
+F0018,A009,4.0,Agent explained the mortgage process clearly,2026-04-07
+F0019,A007,1.0,Agent missed scheduled viewing,2026-01-07
+F0020,A004,4.0,Agent explained the mortgage process clearly,2026-04-23
+F0021,A005,5.0,Very professional throughout the transaction,2026-05-17
+F0022,A003,1.0,Agent missed scheduled viewing,2026-04-29
+F0023,A002,2.0,Service charge details were unclear,2026-06-04
+F0024,A010,1.0,Agent missed scheduled viewing,2026-05-30
+F0025,A003,5.0,Excellent property viewing experience,2026-05-29
+F0026,A009,2.0,Follow-up took too long,2026-06-03
+F0027,A005,5.0,Very professional throughout the transaction,2026-02-10
+F0028,A002,1.0,Agent missed scheduled viewing,2026-02-11
+F0029,A004,4.0,Agent explained the mortgage process clearly,2026-06-18
+F0030,A002,4.0,Agent explained the mortgage process clearly,2026-06-05
+F0031,A008,5.0,Very professional throughout the transaction,2026-03-02
+F0032,A001,1.0,Agent missed scheduled viewing,2026-04-15
+F0033,A004,2.0,Service charge details were unclear,2026-02-03
+F0034,A008,2.0,Follow-up took too long,2026-06-21
+F0035,A003,2.0,Follow-up took too long,2026-06-21
+F0036,A007,5.0,Very professional throughout the transaction,2026-06-30
+F0037,A009,5.0,Very professional throughout the transaction,2026-02-26
+F0038,A001,5.0,Excellent property viewing experience,2026-03-23
+F0039,A007,5.0,Very professional throughout the transaction,2026-04-27
+F0040,A004,4.0,Agent explained the mortgage process clearly,2026-04-12
+F0041,A004,4.0,Agent explained the mortgage process clearly,2026-03-12
+F0042,A004,5.0,Excellent property viewing experience,2026-01-03
+F0043,A005,5.0,Very professional throughout the transaction,2026-01-10
+F0044,A007,4.0,Agent explained the mortgage process clearly,2026-05-01
+F0045,A008,5.0,Very professional throughout the transaction,2026-05-15
+F0046,A007,2.0,Property listing information was outdated,2026-04-04
+F0047,A001,4.0,Agent explained the mortgage process clearly,2026-04-06
+F0048,A008,5.0,Very professional throughout the transaction,2026-04-25
+F0049,A008,2.0,Property listing information was outdated,2026-01-20
+F0050,A008,2.0,Service charge details were unclear,2026-01-20
+F0051,A002,2.0,Service charge details were unclear,2026-03-28
+F0052,A004,2.0,Service charge details were unclear,2026-02-01
+F0053,A002,1.0,Agent missed scheduled viewing,2026-04-29
+F0054,A002,2.0,Service charge details were unclear,2026-03-19
+F0055,A001,1.0,Agent missed scheduled viewing,2026-04-17
+F0056,A001,1.0,Agent missed scheduled viewing,2026-01-28
+F0057,A006,2.0,Property listing information was outdated,2026-05-31
+F0058,A004,5.0,Excellent property viewing experience,2026-03-29
+F0059,A003,4.0,Agent explained the mortgage process clearly,2026-01-14
+F0060,A004,4.0,Agent explained the mortgage process clearly,2026-01-01
+F0061,A004,2.0,Property listing information was outdated,2026-02-24
+F0062,A010,2.0,Property listing information was outdated,2026-01-22
+F0063,A007,2.0,Property listing information was outdated,2026-06-26
+F0064,A008,2.0,Follow-up took too long,2026-02-08
+F0065,A002,2.0,Service charge details were unclear,2026-01-13
+F0066,A005,2.0,Property listing information was outdated,2026-05-13
+F0067,A008,4.0,Agent explained the mortgage process clearly,2026-05-17
+F0068,A008,5.0,Very professional throughout the transaction,2026-05-08
+F0069,A005,2.0,Property listing information was outdated,2026-03-02
+F0070,A010,2.0,Service charge details were unclear,2026-04-10
+F0071,A006,1.0,Agent missed scheduled viewing,2026-05-29
+F0072,A010,4.0,Agent explained the mortgage process clearly,2026-05-22
+F0073,A008,1.0,Agent missed scheduled viewing,2026-02-13
+F0074,A006,4.0,Agent explained the mortgage process clearly,2026-05-29
+F0075,A001,2.0,Property listing information was outdated,2026-02-10
+F0076,A007,5.0,Excellent property viewing experience,2026-01-23
+F0077,A007,2.0,Follow-up took too long,2026-06-29
+F0078,A002,5.0,Very professional throughout the transaction,2026-02-21
+F0079,A003,1.0,Agent missed scheduled viewing,2026-02-05
+F0080,A006,1.0,Agent missed scheduled viewing,2026-01-21
+F0081,A009,2.0,Service charge details were unclear,2026-05-16
+F0082,A002,1.0,Agent missed scheduled viewing,2026-05-22
+F0083,A009,2.0,Follow-up took too long,2026-05-04
+F0084,A006,2.0,Service charge details were unclear,2026-04-15
+F0085,A009,5.0,Excellent property viewing experience,2026-02-02
+F0086,A001,5.0,Excellent property viewing experience,2026-02-16
+F0087,A003,5.0,Very professional throughout the transaction,2026-05-31
+F0088,A009,5.0,Very professional throughout the transaction,2026-02-19
+F0089,A004,2.0,Follow-up took too long,2026-04-16
+F0090,A006,5.0,Very professional throughout the transaction,2026-06-02
+F0091,A006,1.0,Agent missed scheduled viewing,2026-03-04
+F0092,A009,1.0,Agent missed scheduled viewing,2026-06-24
+F0093,A008,5.0,Excellent property viewing experience,2026-02-28
+F0094,A003,5.0,Excellent property viewing experience,2026-01-16
+F0095,A008,2.0,Service charge details were unclear,2026-03-22
+F0096,A002,5.0,Very professional throughout the transaction,2026-02-11
+F0097,A002,1.0,Agent missed scheduled viewing,2026-04-11
+F0098,A010,2.0,Follow-up took too long,2026-05-07
+F0099,A008,2.0,Service charge details were unclear,2026-01-13
+F0100,A001,5.0,Very professional throughout the transaction,2026-05-23
+F0101,A008,4.0,Agent explained the mortgage process clearly,2026-06-22
+F0102,A004,2.0,Service charge details were unclear,2026-05-23
+F0103,A001,4.0,Agent explained the mortgage process clearly,2026-02-01
+F0104,A007,1.0,Agent missed scheduled viewing,2026-06-11
+F0105,A003,2.0,Service charge details were unclear,2026-05-05
+F0106,A001,2.0,Property listing information was outdated,2026-05-06
+F0107,A002,2.0,Property listing information was outdated,2026-04-18
+F0108,A002,2.0,Service charge details were unclear,2026-02-09
+F0109,A006,5.0,Excellent property viewing experience,2026-06-05
+F0110,A004,5.0,Excellent property viewing experience,2026-01-18
+F0111,A006,5.0,Excellent property viewing experience,2026-05-01
+F0112,A004,2.0,Service charge details were unclear,2026-02-17
+F0113,A009,4.0,Agent explained the mortgage process clearly,2026-05-20
+F0114,A002,4.0,Agent explained the mortgage process clearly,2026-02-14
+F0115,A007,2.0,Follow-up took too long,2026-03-30
+F0116,A009,4.0,Agent explained the mortgage process clearly,2026-01-04
+F0117,A002,5.0,Very professional throughout the transaction,2026-03-15
+F0118,A008,5.0,Very professional throughout the transaction,2026-02-14
+F0119,A009,5.0,Very professional throughout the transaction,2026-03-12
+F0120,A005,2.0,Property listing information was outdated,2026-06-18
+F0121,A006,5.0,Excellent property viewing experience,2026-04-01
+F0122,A004,5.0,Very professional throughout the transaction,2026-01-06
+F0123,A004,1.0,Agent missed scheduled viewing,2026-05-15
+F0124,A009,5.0,Very professional throughout the transaction,2026-03-15
+F0125,A009,5.0,Very professional throughout the transaction,2026-04-30
+F0126,A009,2.0,Property listing information was outdated,2026-02-20
+F0127,A002,4.0,Agent explained the mortgage process clearly,2026-04-24
+F0128,A005,1.0,Agent missed scheduled viewing,2026-01-11
+F0129,A008,5.0,Excellent property viewing experience,2026-05-23
+F0130,A002,2.0,Service charge details were unclear,2026-02-01
+F0131,A008,2.0,Property listing information was outdated,2026-05-27
+F0132,A005,2.0,Follow-up took too long,2026-02-27
+F0133,A001,5.0,Very professional throughout the transaction,2026-01-12
+F0134,A004,4.0,Agent explained the mortgage process clearly,2026-05-08
+F0135,A002,2.0,Property listing information was outdated,2026-06-20
+F0136,A002,5.0,Very professional throughout the transaction,2026-06-30
+F0137,A008,5.0,Excellent property viewing experience,2026-01-28
+F0138,A008,5.0,Excellent property viewing experience,2026-04-09
+F0139,A007,1.0,Agent missed scheduled viewing,2026-04-04
+F0140,A006,5.0,Very professional throughout the transaction,2026-01-19
+F0141,A008,1.0,Agent missed scheduled viewing,2026-06-20
+F0142,A004,5.0,Very professional throughout the transaction,2026-04-05
+F0143,A010,2.0,Property listing information was outdated,2026-06-01
+F0144,A002,5.0,Excellent property viewing experience,2026-02-23
+F0145,A008,1.0,Agent missed scheduled viewing,2026-05-24
+F0146,A005,2.0,Service charge details were unclear,2026-03-03
+F0147,A003,5.0,Very professional throughout the transaction,2026-05-23
+F0148,A004,5.0,Very professional throughout the transaction,2026-04-18
+F0149,A005,5.0,Very professional throughout the transaction,2026-04-20
+F0150,A007,2.0,Property listing information was outdated,2026-03-10
+F0151,A006,2.0,Property listing information was outdated,2026-02-23
+F0152,A004,5.0,Excellent property viewing experience,2026-03-05
+F0153,A001,5.0,Very professional throughout the transaction,2026-02-09
+F0154,A002,2.0,Property listing information was outdated,2026-04-04
+F0155,A006,1.0,Agent missed scheduled viewing,2026-01-11
+F0156,A008,4.0,Agent explained the mortgage process clearly,2026-04-22
+F0157,A010,2.0,Follow-up took too long,2026-05-27
+F0158,A002,5.0,Very professional throughout the transaction,2026-06-30
+F0159,A010,2.0,Service charge details were unclear,2026-03-24
+F0160,A009,5.0,Excellent property viewing experience,2026-03-02
+F0161,A002,1.0,Agent missed scheduled viewing,2026-04-22
+F0162,A005,5.0,Excellent property viewing experience,2026-03-13
+F0163,A008,1.0,Agent missed scheduled viewing,2026-01-24
+F0164,A006,5.0,Excellent property viewing experience,2026-06-02
+F0165,A004,2.0,Follow-up took too long,2026-01-24
+F0166,A001,4.0,Agent explained the mortgage process clearly,2026-04-04
+F0167,A005,4.0,Agent explained the mortgage process clearly,2026-06-04
+F0168,A003,5.0,Excellent property viewing experience,2026-05-31
+F0169,A006,2.0,Follow-up took too long,2026-05-24
+F0170,A006,1.0,Agent missed scheduled viewing,2026-01-31
+F0171,A006,5.0,Excellent property viewing experience,2026-02-20
+F0172,A001,1.0,Agent missed scheduled viewing,2026-04-09
+F0173,A008,1.0,Agent missed scheduled viewing,2026-04-08
+F0174,A009,2.0,Property listing information was outdated,2026-04-09
+F0175,A010,5.0,Very professional throughout the transaction,2026-04-13
+F0176,A010,4.0,Agent explained the mortgage process clearly,2026-01-09
+F0177,A003,4.0,Agent explained the mortgage process clearly,2026-03-17
+F0178,A009,4.0,Agent explained the mortgage process clearly,2026-05-15
+F0179,A007,4.0,Agent explained the mortgage process clearly,2026-05-28
+F0180,A004,5.0,Very professional throughout the transaction,2026-05-15
+F0181,A003,5.0,Very professional throughout the transaction,2026-01-20
+F0182,A008,5.0,Excellent property viewing experience,2026-03-14
+F0183,A009,5.0,Excellent property viewing experience,2026-06-22
+F0184,A006,2.0,Follow-up took too long,2026-04-13
+F0185,A001,4.0,Agent explained the mortgage process clearly,2026-01-20
+F0186,A006,5.0,Very professional throughout the transaction,2026-01-15
+F0187,A001,4.0,Agent explained the mortgage process clearly,2026-06-17
+F0188,A010,5.0,Very professional throughout the transaction,2026-05-27
+F0189,A006,4.0,Agent explained the mortgage process clearly,2026-06-28
+F0190,A009,4.0,Agent explained the mortgage process clearly,2026-02-28
+F0191,A002,2.0,Follow-up took too long,2026-03-12
+F0192,A009,5.0,Excellent property viewing experience,2026-05-10
+F0193,A006,2.0,Follow-up took too long,2026-02-25
+F0194,A005,2.0,Follow-up took too long,2026-01-17
+F0195,A008,2.0,Service charge details were unclear,2026-01-26
+F0196,A001,4.0,Agent explained the mortgage process clearly,2026-03-07
+F0197,A007,2.0,Property listing information was outdated,2026-05-07
+F0198,A007,4.0,Agent explained the mortgage process clearly,2026-01-04
+F0199,A003,5.0,Excellent property viewing experience,2026-03-16
+F0200,A007,2.0,Follow-up took too long,2026-05-15
+F0201,A001,,No review text provided,2026-06-01

@@ -1,0 +1,102 @@
+property_id, property_name ,property_type,region,listed_price,status
+P001,Yas Golf Collection 1,Studio Apartment,Jvc,791478.0,Sold
+P002,Emaar Beachfront 2,2 Bedroom Apartment,Al Majaz,5626187.0,Sold
+P003,Vida Residences 3,Office Space,Jvc,6092664.0,Sold
+P004,Saadiyat Lagoons 4,Studio Apartment,Yas Island,465647.0,Sold
+P005,Palm Tower Residences 5,2 Bedroom Apartment,Downtown Dubai,4095177.0,Sold
+P006,Saadiyat Lagoons 6,Studio Apartment,Al Reem Island,5576394.0,Sold
+P007,Creek Horizon 7,Retail Unit,Palm Jumeirah,874959.0,Sold
+P008,Saadiyat Lagoons 8,2 Bedroom Apartment,Yas Island,7933517.0,Sold
+P009,Vida Residences 9,1 Bedroom Apartment,Dubai Hills Estate,11663539.0,Sold
+P010,Emaar Beachfront 10,Penthouse,Dubai Marina,11255454.0,Sold
+P011,Creek Horizon 11,Retail Unit,Downtown Dubai,10233054.0,Sold
+P012,Marina Gate 12,Penthouse,Al Majaz,9989417.0,Sold
+P013,Emaar Beachfront 13,Retail Unit,Dubai Marina,10184804.0,Available
+P014,Palm Tower Residences 14,Penthouse,Business Bay,2141380.0,Sold
+P015,Address Beach Residences 15,Luxury Villa,Al Khan,7990756.0,Sold
+P016,Creek Horizon 16,Studio Apartment,Al Nahda Sharjah,8571161.0,Available
+P017,Reem Five 17,Retail Unit,Muwaileh,1487786.0,Sold
+P018,Marina Gate 18,Studio Apartment,Downtown Dubai,1079897.0,Sold
+P019,Marina Gate 19,2 Bedroom Apartment,Saadiyat Island,5999946.0,Sold
+P020,Yas Golf Collection 20,Luxury Villa,Khalifa City,7002182.0,Sold
+P021,Yas Golf Collection 21,Townhouse,Business Bay,11969822.0,Sold
+P022,Palm Tower Residences 22,2 Bedroom Apartment,Yas Island,6078541.0,Sold
+P023,Palm Tower Residences 23,Retail Unit,Tilal City,3472902.0,Sold
+P024,Palm Tower Residences 24,Penthouse,Downtown Dubai,9652836.0,Sold
+P025,Palm Tower Residences 25,2 Bedroom Apartment,Tilal City,10701728.0,Sold
+P026,Marina Gate 26,1 Bedroom Apartment,Al Khan,9709886.0,Sold
+P027,Creek Horizon 27,Studio Apartment,Business Bay,9657102.0,Sold
+P028,Palm Tower Residences 28,Penthouse,Dubai Marina,6981579.0,Available
+P029,Marina Gate 29,Penthouse,Business Bay,2111534.0,Sold
+P030,Creek Horizon 30,1 Bedroom Apartment,Al Reem Island,4677763.0,Sold
+P031,Emaar Beachfront 31,Penthouse,Muwaileh,6229032.0,Sold
+P032,Burj Vista 32,Penthouse,Al Majaz,2717034.0,Available
+P033,Burj Vista 33,Retail Unit,Al Khan,1712035.0,Sold
+P034,Address Beach Residences 34,Office Space,Al Nahda Sharjah,1019970.0,Sold
+P035,Burj Vista 35,Studio Apartment,Dubai Hills Estate,1543160.0,Sold
+P036,Emaar Beachfront 36,Penthouse,Al Majaz,11880425.0,Sold
+P037,Vida Residences 37,Luxury Villa,Tilal City,9469129.0,Sold
+P038,Yas Golf Collection 38,2 Bedroom Apartment,Al Reem Island,5995328.0,Sold
+P039,Vida Residences 39,Retail Unit,Palm Jumeirah,5629086.0,Sold
+P040,Address Beach Residences 40,Studio Apartment,Palm Jumeirah,10158786.0,Sold
+P041,Vida Residences 41,Studio Apartment,Dubai Hills Estate,10635010.0,Sold
+P042,Vida Residences 42,Studio Apartment,Jlt,1432880.0,Sold
+P043,Yas Golf Collection 43,Studio Apartment,Al Reem Island,657747.0,Sold
+P044,Reem Five 44,2 Bedroom Apartment,Tilal City,10896016.0,Sold
+P045,Yas Golf Collection 45,1 Bedroom Apartment,Tilal City,3224813.0,Sold
+P046,Burj Vista 46,Studio Apartment,Al Raha Beach,2845640.0,Sold
+P047,Burj Vista 47,Luxury Villa,Yas Island,11272163.0,Sold
+P048,Marina Gate 48,Office Space,Dubai Marina,3159054.0,Sold
+P049,Address Beach Residences 49,2 Bedroom Apartment,Jvc,4753518.0,Sold
+P050,Emaar Beachfront 50,Townhouse,Business Bay,576491.0,Sold
+P051,Yas Golf Collection 51,Penthouse,Muwaileh,10750733.0,Sold
+P052,Yas Golf Collection 52,Townhouse,Yas Island,7995729.0,Sold
+P053,Address Beach Residences 53,Penthouse,Al Raha Beach,5387320.0,Sold
+P054,Vida Residences 54,1 Bedroom Apartment,Al Nahda Sharjah,9439059.0,Sold
+P055,Creek Horizon 55,2 Bedroom Apartment,Jvc,3806142.0,Sold
+P056,Burj Vista 56,2 Bedroom Apartment,Tilal City,11009195.0,Sold
+P057,Vida Residences 57,1 Bedroom Apartment,Dubai Hills Estate,7588317.0,Sold
+P058,Palm Tower Residences 58,2 Bedroom Apartment,Muwaileh,1577068.0,Sold
+P059,Saadiyat Lagoons 59,Office Space,Tilal City,8596781.0,Sold
+P060,Burj Vista 60,Office Space,Business Bay,10022360.0,Sold
+P061,Creek Horizon 61,Townhouse,Dubai Marina,4612426.0,Sold
+P062,Reem Five 62,Townhouse,Saadiyat Island,10551002.0,Sold
+P063,Saadiyat Lagoons 63,Studio Apartment,Downtown Dubai,7814620.0,Sold
+P064,Palm Tower Residences 64,2 Bedroom Apartment,Dubai Hills Estate,9088433.0,Sold
+P065,Vida Residences 65,Luxury Villa,Jvc,8065550.0,Available
+P066,Marina Gate 66,1 Bedroom Apartment,Tilal City,3648638.0,Sold
+P067,Burj Vista 67,Studio Apartment,Jlt,11671648.0,Sold
+P068,Address Beach Residences 68,Penthouse,Palm Jumeirah,6415539.0,Available
+P069,Saadiyat Lagoons 69,Office Space,Jlt,7024274.0,Sold
+P070,Marina Gate 70,Office Space,Al Nahda Sharjah,10373766.0,Sold
+P071,Creek Horizon 71,Luxury Villa,Al Nahda Sharjah,4702209.0,Sold
+P072,Marina Gate 72,Luxury Villa,Jvc,10137108.0,Sold
+P073,Vida Residences 73,2 Bedroom Apartment,Khalifa City,11707622.0,Sold
+P074,Address Beach Residences 74,Townhouse,Al Khan,7305097.0,Sold
+P075,Marina Gate 75,Townhouse,Yas Island,2832831.0,Sold
+P076,Reem Five 76,Townhouse,Al Reem Island,2206951.0,Sold
+P077,Yas Golf Collection 77,Penthouse,Al Majaz,1018516.0,Sold
+P078,Reem Five 78,Luxury Villa,Al Reem Island,731528.0,Sold
+P079,Palm Tower Residences 79,Luxury Villa,Palm Jumeirah,2431621.0,Sold
+P080,Saadiyat Lagoons 80,Studio Apartment,Palm Jumeirah,8769917.0,Sold
+P081,Vida Residences 81,1 Bedroom Apartment,Khalifa City,9370133.0,Sold
+P082,Yas Golf Collection 82,2 Bedroom Apartment,Al Reem Island,9204717.0,Available
+P083,Palm Tower Residences 83,Studio Apartment,Dubai Marina,11986228.0,Available
+P084,Emaar Beachfront 84,1 Bedroom Apartment,Al Majaz,2092902.0,Sold
+P085,Creek Horizon 85,Luxury Villa,Dubai Hills Estate,10258793.0,Available
+P086,Marina Gate 86,Studio Apartment,Al Reem Island,2132085.0,Sold
+P087,Burj Vista 87,2 Bedroom Apartment,Saadiyat Island,5364427.0,Sold
+P088,Palm Tower Residences 88,Office Space,Khalifa City,1543184.0,Sold
+P089,Emaar Beachfront 89,Office Space,Al Reem Island,8122895.0,Sold
+P090,Creek Horizon 90,1 Bedroom Apartment,Downtown Dubai,8531598.0,Sold
+P091,Marina Gate 91,1 Bedroom Apartment,Yas Island,5511191.0,Sold
+P092,Reem Five 92,Retail Unit,Al Majaz,9704231.0,Sold
+P093,Reem Five 93,Townhouse,Al Khan,1347903.0,Available
+P094,Creek Horizon 94,Townhouse,Tilal City,10160172.0,Sold
+P095,Address Beach Residences 95,Penthouse,Business Bay,2168693.0,Sold
+P096,Vida Residences 96,Studio Apartment,Dubai Hills Estate,10939604.0,Sold
+P097,Yas Golf Collection 97,Townhouse,Dubai Marina,6141365.0,Sold
+P098,Yas Golf Collection 98,Luxury Villa,Khalifa City,3071231.0,Sold
+P099,Saadiyat Lagoons 99,Townhouse,Al Raha Beach,1401872.0,Sold
+P100,Vida Residences 100,2 Bedroom Apartment,Al Majaz,9615151.0,Sold
+P101,Missing Price,1 Bedroom Apartment,Dubai Marina,6322285.5,Available

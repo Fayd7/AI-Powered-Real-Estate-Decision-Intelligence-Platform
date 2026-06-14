@@ -1,0 +1,243 @@
+{
+  "name": "AI Database Assistant",
+  "nodes": [
+    {
+      "parameters": {
+        "public": true,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.4,
+      "position": [
+        -368,
+        -80
+      ],
+      "id": "8b143c8f-e312-419e-a472-6e7e76a076d5",
+      "name": "When chat message received",
+      "webhookId": "3fc85036-7e96-4e8b-8f1e-255164f495cd"
+    },
+    {
+      "parameters": {
+        "options": {
+          "systemMessage": "You are a Real Estate Business Intelligence Assistant.\n\nYou have access to a PostgreSQL database tool.\n\nWhenever a user asks about revenue, sales, agents, regions, ratings, campaigns, leads, or properties:\n\n1. Use the PostgreSQL tool.\n2. Generate the required SQL query.\n3. Read the results.\n4. Answer in natural language.\n\nNever make up data.\n\nAlways use the PostgreSQL tool when database information is required.\n\nDo not show SQL unless the user explicitly requests it.\n\nIf the user asks for:\n- Executive Summary\n- Business Summary\n- Company Performance Summary\n\nUse the kpi_summary table and provide:\n\n1. Executive Summary\n2. Key Findings\n3. Recommendations"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        -160,
+        -80
+      ],
+      "id": "aabc76f5-dab0-44f9-af00-a65753fdbbd9",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1.1,
+      "position": [
+        -176,
+        160
+      ],
+      "id": "f650a206-d966-4117-84a0-d1ced94643e4",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "QZr6BEiQS6yxDxNI",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "descriptionType": "manual",
+        "toolDescription": "Execute a SQL query in PostgresReal Estate Database Schema\n\nTables:\n\nagents\n- agent_id\n- agent_name\n- region\n- experience_years\n\nsales\n- sale_id\n- property_id\n- agent_id\n- lead_id\n- sale_date\n- listed_price\n- sale_amount\n\nproperties\n- property_id\n- property_name\n- property_type\n- region\n- listed_price\n- status\n\nleads\n- lead_id\n- campaign_id\n- property_id\n- lead_date\n- lead_status\n- region\n\nmarketing_campaign\n- campaign_id\n- campaign_name\n- channel\n- spend\n- start_date\n- end_date\n\ncustomer_feedback\n- feedback_id\n- agent_id\n- rating\n- review_text\n- review_date\n\nkpi_summary\n- total_revenue\n- total_sales\n- avg_rating\n- top_region\n- top_agent\n- conversion_rate\n- top_campaign\n\nsales_details\n- sale_amount\n- sale_date\n- sale_id\n- property_name\n- property_type\n- region\n- agent_name\n\nImportant Rules:\n- Revenue is stored in sales.sale_amount\n- Never use sale_price\n- Always use existing column names only\n- Generate SQL based on the schema above\n- Return answers in natural language\n- Do not show SQL unless requested\n\nIMPORTANT:\n\nAll tables are located in schema \"clean\".\n\nAlways use schema prefixes:\n\nclean.sales\nclean.properties\nclean.agents\nclean.leads\nclean.marketing_campaign\nclean.customer_feedback\nclean.kpi_summary\nclean.sales_details\n\nNever query tables without the clean. prefix.",
+        "operation": "executeQuery",
+        "query": "{{ $fromAI(\"query\") }}\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.postgresTool",
+      "typeVersion": 2.6,
+      "position": [
+        224,
+        128
+      ],
+      "id": "e5dc569d-283d-4165-b140-4d8b7bd3ff57",
+      "name": "Execute a SQL query in Postgres",
+      "credentials": {
+        "postgres": {
+          "id": "cMN7opGLQcdwkaPq",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.4,
+      "position": [
+        16,
+        176
+      ],
+      "id": "f3787af3-8280-4b82-880a-dc0c44decc5d",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "schema": {
+          "__rl": true,
+          "value": "clean",
+          "mode": "list",
+          "cachedResultName": "clean"
+        },
+        "table": {
+          "__rl": true,
+          "value": "ai_chat_history",
+          "mode": "list",
+          "cachedResultName": "ai_chat_history"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "question": "={{ $('When chat message received')\n.item.json.chatInput }}",
+            "answer": "={{ $('AI Agent').item.json.output }}"
+          },
+          "matchingColumns": [
+            "id"
+          ],
+          "schema": [
+            {
+              "id": "id",
+              "displayName": "id",
+              "required": false,
+              "defaultMatch": true,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "question",
+              "displayName": "question",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "answer",
+              "displayName": "answer",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "created_at",
+              "displayName": "created_at",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "dateTime",
+              "canBeUsedToMatch": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [
+        192,
+        -80
+      ],
+      "id": "a9997b1e-c9d4-42dc-89e0-42254de2db70",
+      "name": "Insert rows in a table",
+      "credentials": {
+        "postgres": {
+          "id": "cMN7opGLQcdwkaPq",
+          "name": "Postgres account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Execute a SQL query in Postgres": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Insert rows in a table",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "4228d7ca-b9bf-46eb-9a08-9650df502621",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "227d6ea6a55283c07ecd134897943955f5521bbfcd72a69a55c4cfc1b1ee935b"
+  },
+  "nodeGroups": [],
+  "id": "r3tdQA3d8HR4QagO",
+  "tags": []
+}
